@@ -13,17 +13,41 @@ const produitsinitial=[
 ]
 function ListesProduits() {
   const [produits, setProduits]=useState(produitsinitial)
- 
+  const [newName, setNewName] = useState('')
+  const [newPrix, setNewPrix]= useState('')
+   
+  const handleInputName=(e)=>{
+    setNewName(e.target.value)
+      console.log(setNewName)
+  }
+  const handleInputPrix=(e)=>{
+      setNewPrix(e.target.value)
+      console.log(setNewPrix)
+  }
+  const handleAddProduct=(e)=>{
+    e.preventDefault()
+    const newProduit = {
+      id: produits.length,
+      name: newName,
+      prix: newPrix
+    }
+    setProduits([...produits, newProduit])
+    setNewName('')
+    setNewPrix('')
+  }
   return (
     <div>
-      <form>
+      <form onSubmit={handleAddProduct}>
         <hr/>
-    <input className="form-control form-control-sm" type="text" name='name' placeholder='entrer le nom de produit'/>      
+    <input className="form-control form-control-sm" type="text" name='name' placeholder='entrer le nom de produit'
+      value={newName}
+      onChange={handleInputName}/>
     <hr/>
     
     <input className="form-control form-control-sm" type="text" name='price' placeholder='entrer le prix de produit' aria-label=".form-control-sm example"
-         
-    /><hr/>
+      value={newPrix}
+      onChange={handleInputPrix}/>
+        <hr/>
     <button type='submit'>Add Product</button>
     </form><hr/>
       <table className="table">
