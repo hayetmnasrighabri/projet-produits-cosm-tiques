@@ -18,11 +18,11 @@ function ListesProduits() {
    
   const handleInputName=(e)=>{
     setNewName(e.target.value)
-      console.log(setNewName)
+      console.log(newName)
   }
   const handleInputPrix=(e)=>{
       setNewPrix(e.target.value)
-      console.log(setNewPrix)
+      console.log(newPrix)
   }
   const handleAddProduct=(e)=>{
     e.preventDefault()
@@ -31,9 +31,17 @@ function ListesProduits() {
       name: newName,
       prix: newPrix
     }
+
     setProduits([...produits, newProduit])
+    console.log(newProduit)
     setNewName('')
     setNewPrix('')
+  }
+
+  const handleDelete=(id)=>{
+    const updatedProducts = produits.filter(produit => produit.id !== id);
+    setProduits(updatedProducts);
+    console.log(produits)
   }
   return (
     <div>
@@ -66,7 +74,7 @@ function ListesProduits() {
       <td>{produit.name}</td>
       <td>{produit.prix} $</td>
       <td><button type='submit' className='Editbtn '>Edit</button></td>
-      <td><button type='submit' className='deletebtn'>Delete</button></td>
+      <td><button type='submit' className='deletebtn' onClick={()=>handleDelete(produit.id)}>Delete</button></td>
     </tr>
     
     ))}
