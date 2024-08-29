@@ -57,7 +57,6 @@ function ListesProduits() {
  const handletrie=()=>{
   const produitsTries = produits.sort((a,b)=>a.price - b.price)
   console.log(produitsTries)
-  
 }
   return (
     <div>
