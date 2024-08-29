@@ -38,6 +38,7 @@ function ListesProduits() {
     console.log(newProduit)
     setNewName('')
     setNewPrice('')
+    console.log(newName)
   }
 
   const handleDelete=(id)=>{
@@ -48,6 +49,12 @@ function ListesProduits() {
   const handleEdit=(id)=>{
     setEdit(id)
   }
+ const handleReverse=()=>{
+  const nextProduct = [...produits]
+  nextProduct.reverse()
+  setProduits(nextProduct)
+ }
+
   return (
     <div>
       <form onSubmit={handleAddProduct}>
@@ -63,6 +70,7 @@ function ListesProduits() {
         <hr/>
     <button type='submit'>Add Product</button>
     </form><hr/>
+    <button type='submit' onClick={handleReverse}>reverse</button>
       <table className="table">
   <thead>
     <tr>
@@ -83,9 +91,9 @@ function ListesProduits() {
       <td><button type='submit' className='Editbtn ' onClick={()=>handleEdit(produit.id)}>Edit</button>
       <button type='submit' className='deletebtn' onClick={()=>handleDelete(produit.id)}>Delete</button></td>
     </tr>
-    
+      
     ))}
-    
+     
   </tbody>
 </table>
     </div>

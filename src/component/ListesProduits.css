@@ -26,6 +26,9 @@ button {
   .deletebtn {
     background-color: #f44336;
   }  
+  .InsertBtn {
+    background-color: #4c36f4; 
+  }
   .Enregbtn {
     background-color:#04AA6D;
     color: rgb(2, 2, 2);
