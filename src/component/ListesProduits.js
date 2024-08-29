@@ -54,7 +54,11 @@ function ListesProduits() {
   nextProduct.reverse()
   setProduits(nextProduct)
  }
-
+ const handletrie=()=>{
+  const produitsTries = produits.sort((a,b)=>a.price - b.price)
+  console.log(produitsTries)
+  
+}
   return (
     <div>
       <form onSubmit={handleAddProduct}>
@@ -69,8 +73,11 @@ function ListesProduits() {
       onChange={handleInputPrice}/>
         <hr/>
     <button type='submit'>Add Product</button>
+    
     </form><hr/>
+    <button type='submit' onClick={handletrie}>trie</button>
     <button type='submit' onClick={handleReverse}>reverse</button>
+    
       <table className="table">
   <thead>
     <tr>
