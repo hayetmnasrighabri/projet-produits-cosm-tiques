@@ -55,8 +55,10 @@ function ListesProduits() {
   setProduits(nextProduct)
  }
  const handletrie=()=>{
-  const produitsTries = produits.sort((a,b)=>a.price - b.price)
+  //const produitsTries = produits.sort((a,b)=>a.price - b.price)
+  const produitsTries = produits.sort((a, b) => a.name.localeCompare(b.name));
   console.log(produitsTries)
+  setProduits(produitsTries)
 }
   return (
     <div>
