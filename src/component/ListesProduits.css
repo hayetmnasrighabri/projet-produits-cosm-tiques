@@ -26,3 +26,15 @@ button {
   .deletebtn {
     background-color: #f44336;
   }  
+  .Enregbtn {
+    background-color:#04AA6D;
+    color: rgb(2, 2, 2);
+    padding: 10px 24px;
+     width: 100%;
+  }
+  .Annulbtn {
+    background-color: #f44336;
+    padding: 10px 24px;
+    width: 100%;
+  }
+ 
